@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'icuapidata'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_17b404dc179a48d1a3cdc1f26b2d9046 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9195cfcba4604b329528b510928797b1 }}
         package: ${{env.DOTNET_ROOT}}/myapp 
