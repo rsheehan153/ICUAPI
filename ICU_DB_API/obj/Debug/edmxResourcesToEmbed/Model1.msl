@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NHSDataModelStoreContainer" CdmEntityContainer="NHSScoreDataEntities">
+    <EntitySetMapping Name="Scores">
+      <EntityTypeMapping TypeName="NHSDataModel.Score">
+        <MappingFragment StoreEntitySet="Score">
+          <ScalarProperty Name="score_id" ColumnName="score_id" />
+          <ScalarProperty Name="poid" ColumnName="poid" />
+          <ScalarProperty Name="patid" ColumnName="patid" />
+          <ScalarProperty Name="mms_score" ColumnName="mms_score" />
+          <ScalarProperty Name="cpa_total" ColumnName="cpa_total" />
+          <ScalarProperty Name="mrc_total" ColumnName="mrc_total" />
+          <ScalarProperty Name="sofa_total" ColumnName="sofa_total" />
+          <ScalarProperty Name="diagnosis" ColumnName="diagnosis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

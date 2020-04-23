@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NHSDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="score_id" />
+          </Key>
+          <Property Name="score_id" Type="int" Nullable="false" />
+          <Property Name="poid" Type="int" Nullable="false" />
+          <Property Name="patid" Type="int" Nullable="false" />
+          <Property Name="mms_score" Type="int" />
+          <Property Name="cpa_total" Type="int" />
+          <Property Name="mrc_total" Type="int" />
+          <Property Name="sofa_total" Type="int" />
+          <Property Name="diagnosis" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="NHSDataModelStoreContainer">
+          <EntitySet Name="Score" EntityType="Self.Score" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NHSDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="score_id" />
+          </Key>
+          <Property Name="score_id" Type="Int32" Nullable="false" />
+          <Property Name="poid" Type="Int32" Nullable="false" />
+          <Property Name="patid" Type="Int32" Nullable="false" />
+          <Property Name="mms_score" Type="Int32" />
+          <Property Name="cpa_total" Type="Int32" />
+          <Property Name="mrc_total" Type="Int32" />
+          <Property Name="sofa_total" Type="Int32" />
+          <Property Name="diagnosis" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="NHSScoreDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Scores" EntityType="Self.Score" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NHSDataModelStoreContainer" CdmEntityContainer="NHSScoreDataEntities">
+          <EntitySetMapping Name="Scores">
+            <EntityTypeMapping TypeName="NHSDataModel.Score">
+              <MappingFragment StoreEntitySet="Score">
+                <ScalarProperty Name="score_id" ColumnName="score_id" />
+                <ScalarProperty Name="poid" ColumnName="poid" />
+                <ScalarProperty Name="patid" ColumnName="patid" />
+                <ScalarProperty Name="mms_score" ColumnName="mms_score" />
+                <ScalarProperty Name="cpa_total" ColumnName="cpa_total" />
+                <ScalarProperty Name="mrc_total" ColumnName="mrc_total" />
+                <ScalarProperty Name="sofa_total" ColumnName="sofa_total" />
+                <ScalarProperty Name="diagnosis" ColumnName="diagnosis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
